@@ -1,0 +1,178 @@
+﻿division_template = {
+	name = "Infantry Division"		# Military District Forces (reserve/garrison forces)
+	# Note: all forces at reserve levels in 1936
+
+	division_names_group = NZL_INF_01
+
+	regiments = {
+					infantry = { x = 0 y = 0 }
+					infantry = { x = 0 y = 1 }
+					infantry = { x = 0 y = 2 }
+					infantry = { x = 0 y = 3 }
+					infantry = { x = 0 y = 4 }
+					
+					infantry = { x = 1 y = 0 }
+					infantry = { x = 1 y = 1 }
+					infantry = { x = 1 y = 2 }
+					infantry = { x = 1 y = 3 }
+					infantry = { x = 1 y = 4 }
+					
+					infantry = { x = 2 y = 0 }
+					infantry = { x = 2 y = 1 }
+					infantry = { x = 2 y = 2 }
+					infantry = { x = 2 y = 3 }
+					
+					artillery_brigade = { x = 3 y = 0 }
+					artillery_brigade = { x = 3 y = 1 }
+					artillery_brigade = { x = 3 y = 2 }
+					artillery_brigade = { x = 3 y = 3 }
+				}
+				support = {
+					engineer = { x = 0 y = 0 } 	
+					recon = { x = 0 y = 1 } 		
+					artillery = { x = 0 y = 2 }
+				}
+}
+
+division_template = {
+	name = "Light Armoured Division"
+
+	division_names_group = NZL_ARM_01
+
+	regiments = {
+		light_armor = { x = 0 y = 0 }
+		light_armor = { x = 0 y = 1 }
+		light_armor = { x = 0 y = 2 }
+		light_armor = { x = 0 y = 3 }
+		light_armor = { x = 0 y = 4 }
+		
+		light_armor = { x = 1 y = 0 }
+		light_armor = { x = 1 y = 1 }
+		light_armor = { x = 1 y = 2 }
+		light_armor = { x = 1 y = 3 }
+		light_armor = { x = 1 y = 4 }
+		
+		light_armor = { x = 2 y = 0 }
+		light_armor = { x = 2 y = 1 }
+		light_armor = { x = 2 y = 2 }
+		light_armor = { x = 2 y = 3 }
+		light_armor = { x = 2 y = 4 }
+		
+		motorized = { x = 3 y = 0 }
+		motorized = { x = 3 y = 1 }
+		motorized = { x = 3 y = 2 }
+		motorized = { x = 3 y = 3 }
+		motorized = { x = 3 y = 4 }
+	}
+	
+	support = {
+					engineer = { x = 0 y = 0 } 	
+					recon = { x = 0 y = 1 }
+					artillery = { x = 0 y = 2 }
+				}
+}
+
+division_template = {
+	name = "Medium Armoured Division"
+
+	division_names_group = NZL_ARM_01
+
+	regiments = {
+		medium_armor = { x = 0 y = 0 }
+		medium_armor = { x = 0 y = 1 }
+		medium_armor = { x = 0 y = 2 }
+		medium_armor = { x = 0 y = 3 }
+		medium_armor = { x = 0 y = 4 }
+		
+		medium_armor = { x = 1 y = 0 }
+		medium_armor = { x = 1 y = 1 }
+		medium_armor = { x = 1 y = 2 }
+		medium_armor = { x = 1 y = 3 }
+		medium_armor = { x = 1 y = 4 }
+		
+		medium_armor = { x = 2 y = 0 }
+		medium_armor = { x = 2 y = 1 }
+		medium_armor = { x = 2 y = 2 }
+		medium_armor = { x = 2 y = 3 }
+		medium_armor = { x = 2 y = 4 }
+		
+		motorized = { x = 3 y = 0 }
+		motorized = { x = 3 y = 1 }
+		motorized = { x = 3 y = 2 }
+		motorized = { x = 3 y = 3 }
+		motorized = { x = 3 y = 4 }
+	}
+	
+	support = {
+					engineer = { x = 0 y = 0 } 	
+					recon = { x = 0 y = 1 }
+					artillery = { x = 0 y = 2 }
+				}
+}
+
+units = {
+	##### Royal New Zealand Army #####
+	division= {	
+		#name = "1st NZ Infantry Division"
+		division_name = {    # New syntax for compatibility with name lists
+			is_name_ordered = yes
+			name_order = 1
+		}
+		location = 4543 # Auckland
+		division_template = "Infantry Division"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.3
+
+	}
+	division= {	
+		#name = "2nd NZ Infantry Division"
+		division_name = {    # New syntax for compatibility with name lists
+			is_name_ordered = yes
+			name_order = 2
+		}
+		location = 1814 # Wellington
+		division_template = "Infantry Division"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.3
+
+	}
+	division= {	
+		#name = "3rd NZ Infantry Division"
+		division_name = {    # New syntax for compatibility with name lists
+			is_name_ordered = yes
+			name_order = 3
+		}
+		location = 2197 # Christchurch
+		division_template = "Infantry Division"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.3
+
+	}
+
+	##### No Naval OOB (receives first RN ships in 1941) #####
+}
+
+air_wings = {
+	### Royal New Zealand Air Force (RNZAF)
+	284 = {
+		# RNZAF Station Auckland -- Vickers Vildebeests
+		nav_bomber_equipment_1 =  {
+			owner = "NZL" 
+			amount = 50
+		}
+	}
+}
+
+
+##### Starting Production #####
+instant_effect = {
+	add_equipment_production = {
+		equipment = {
+			type = infantry_equipment_1
+			creator = "NZL"
+		}
+		requested_factories = 1
+		progress = 0.62
+		efficiency = 100
+	}
+}
